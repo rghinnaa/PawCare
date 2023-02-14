@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/vUploadImage"
+        android:layout_width="@dimen/zero_margin"
+        android:layout_height="@dimen/zero_margin"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginTop="@dimen/screen_margin"
+        android:layout_marginEnd="@dimen/screen_margin"
+        android:background="@drawable/bg_upload_payment"
+        app:layout_constraintDimensionRatio="2:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivUploadImage"
+        android:layout_width="@dimen/zero_margin"
+        android:layout_height="@dimen/zero_margin"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginTop="@dimen/screen_margin"
+        android:layout_marginEnd="@dimen/screen_margin"
+        app:layout_constraintDimensionRatio="2:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clUploadPlaceholder"
+        android:layout_width="@dimen/zero_margin"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/vUploadImage"
+        app:layout_constraintEnd_toEndOf="@id/vUploadImage"
+        app:layout_constraintStart_toStartOf="@id/vUploadImage"
+        app:layout_constraintTop_toTopOf="@id/vUploadImage">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivUpload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_upload" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvUploadTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/screen_margin"
+            android:layout_marginTop="@dimen/small_margin"
+            android:layout_marginEnd="@dimen/screen_margin"
+            android:text="@string/upload_image"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.Roboto.Medium.Body2"
+            android:textColor="@color/alto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivUpload" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvUploadDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/screen_margin"
+            android:layout_marginTop="@dimen/small_margin"
+            android:layout_marginEnd="@dimen/screen_margin"
+            android:letterSpacing="0"
+            android:text="@string/upload_image_desc"
+            android:textAllCaps="false"
+            android:textAppearance="@style/TextAppearance.Roboto.Medium.Overline"
+            android:textColor="@color/alto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvUploadTitle" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvBank"
+        android:layout_width="@dimen/zero_margin"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginTop="@dimen/large_margin"
+        android:layout_marginEnd="@dimen/screen_margin"
+        android:text="@string/field_bank"
+        android:textAppearance="@style/TextAppearance.Roboto.Medium.Body2"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivUploadImage" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/boxBank"
+        style="@style/TextInputLayout.Login.Form.Outlined.Dense"
+        android:layout_width="@dimen/zero_margin"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/screen_margin"
+        android:layout_marginBottom="@dimen/screen_margin"
+        app:boxBackgroundColor="@color/white"
+        app:boxCornerRadiusBottomEnd="@dimen/_8sdp"
+        app:boxCornerRadiusBottomStart="@dimen/_8sdp"
+        app:boxCornerRadiusTopEnd="@dimen/_8sdp"
+        app:boxCornerRadiusTopStart="@dimen/_8sdp"
+        app:boxStrokeColor="@drawable/bg_text_input_layout"
+        app:boxStrokeWidth="@dimen/_1sdp"
+        app:boxStrokeWidthFocused="1dp"
+        app:endIconTint="@color/alto"
+        app:expandedHintEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvBank"
+        app:placeholderText="@string/field_input_bank"
+        app:placeholderTextAppearance="@style/TextAppearance.Roboto.Regular.Body2"
+        app:placeholderTextColor="@color/alto">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etBank"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:maxLength="255"
+            android:maxLines="1"
+            android:textAppearance="@style/TextAppearance.Roboto.Regular.Caption"
+            android:textColor="@color/black" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvName"
+        android:layout_width="@dimen/zero_margin"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginTop="@dimen/screen_margin"
+        android:layout_marginEnd="@dimen/screen_margin"
+        android:text="@string/field_payment_name"
+        android:textAppearance="@style/TextAppearance.Roboto.Medium.Body2"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/boxBank" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/boxName"
+        style="@style/TextInputLayout.Login.Form.Outlined.Dense"
+        android:layout_width="@dimen/zero_margin"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/screen_margin"
+        android:layout_marginBottom="@dimen/screen_margin"
+        app:boxBackgroundColor="@color/white"
+        app:boxCornerRadiusBottomEnd="@dimen/_8sdp"
+        app:boxCornerRadiusBottomStart="@dimen/_8sdp"
+        app:boxCornerRadiusTopEnd="@dimen/_8sdp"
+        app:boxCornerRadiusTopStart="@dimen/_8sdp"
+        app:boxStrokeColor="@drawable/bg_text_input_layout"
+        app:boxStrokeWidth="@dimen/_1sdp"
+        app:boxStrokeWidthFocused="1dp"
+        app:endIconTint="@color/alto"
+        app:expandedHintEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvName"
+        app:placeholderText="@string/field_input_payment_name"
+        app:placeholderTextAppearance="@style/TextAppearance.Roboto.Regular.Body2"
+        app:placeholderTextColor="@color/alto">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:maxLength="255"
+            android:maxLines="1"
+            android:textAppearance="@style/TextAppearance.Roboto.Regular.Caption"
+            android:textColor="@color/black" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSubmit"
+        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+        android:layout_width="@dimen/zero_margin"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginTop="@dimen/large_margin"
+        android:layout_marginEnd="@dimen/screen_margin"
+        android:backgroundTint="@color/mona_lisa"
+        android:insetTop="@dimen/zero_margin"
+        android:insetBottom="@dimen/zero_margin"
+        android:padding="@dimen/medium_margin"
+        android:text="@string/submit"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.Roboto.Bold.Caption"
+        android:textColor="@color/white"
+        app:cornerRadius="@dimen/_4sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/boxName" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

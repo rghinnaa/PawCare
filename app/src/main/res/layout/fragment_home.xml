@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvNameGreeting"
+        android:layout_width="@dimen/zero_margin"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginTop="@dimen/screen_margin"
+        android:layout_marginEnd="@dimen/screen_margin"
+        android:text="@string/main_name_greeting"
+        android:textAppearance="@style/TextAppearance.Roboto.Regular.Body2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvGreeting"
+        android:layout_width="@dimen/zero_margin"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginTop="@dimen/small_margin"
+        android:layout_marginEnd="@dimen/screen_margin"
+        android:text="@string/main_greeting"
+        android:textAppearance="@style/TextAppearance.Roboto.Regular.Body2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvNameGreeting" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vpBanner"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/zero_margin"
+        android:layout_marginTop="@dimen/screen_margin"
+        app:layout_constraintDimensionRatio="2:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvGreeting" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tlBanner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabBackground="@drawable/tab_indicator"
+        app:tabGravity="center"
+        app:tabIndicator="@null"
+        app:tabPaddingStart="@dimen/normal_margin"
+        app:tabPaddingEnd="@dimen/normal_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vpBanner" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvVet"
+        android:layout_width="@dimen/zero_margin"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginEnd="@dimen/screen_margin"
+        android:text="@string/main_consultation"
+        android:textAppearance="@style/TextAppearance.Roboto.Regular.Body2"
+        app:layout_constraintEnd_toStartOf="@id/tvVetSeeAll"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tlBanner" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvVetSeeAll"
+        android:layout_width="@dimen/zero_margin"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginEnd="@dimen/screen_margin"
+        android:text="@string/see_all"
+        android:textAppearance="@style/TextAppearance.Roboto.Regular.Body2"
+        android:textColor="@color/mona_lisa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tlBanner" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvVet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/normal_margin"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/medium_margin"
+        android:paddingEnd="@dimen/small_margin"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvVet" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvEvent"
+        android:layout_width="@dimen/zero_margin"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginTop="@dimen/small_margin"
+        android:layout_marginEnd="@dimen/screen_margin"
+        android:text="@string/home_event"
+        android:textAppearance="@style/TextAppearance.Roboto.Regular.Body2"
+        app:layout_constraintEnd_toStartOf="@id/tvVetSeeAll"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rvVet" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tEventSeeAll"
+        android:layout_width="@dimen/zero_margin"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginTop="@dimen/small_margin"
+        android:layout_marginEnd="@dimen/screen_margin"
+        android:text="@string/see_all"
+        android:textAppearance="@style/TextAppearance.Roboto.Regular.Body2"
+        android:textColor="@color/mona_lisa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rvVet" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivEvent"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/zero_margin"
+        app:layout_constraintDimensionRatio="2:1"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:src="@drawable/bannercat"
+        android:scaleType="centerCrop"
+        android:layout_marginEnd="@dimen/screen_margin"
+        app:layout_constraintTop_toBottomOf="@id/tvEvent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

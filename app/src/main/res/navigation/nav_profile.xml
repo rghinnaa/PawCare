@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/profile"
+    app:startDestination="@id/profile_fragment">
+
+    <fragment
+        android:id="@+id/profile_fragment"
+        android:name="com.example.pawcare.ui.profile.ProfileFragment"
+        android:label="@string/label_profile"
+        tools:layout="@layout/fragment_profile">
+
+        <action
+            android:id="@+id/actionHistoryConsultation"
+            app:destination="@id/history_consultation_fragment" />
+
+        <action
+            android:id="@+id/actionProfileEdit"
+            app:destination="@id/profile_edit_fragment" />
+
+        <action
+            android:id="@+id/actionChangePassword"
+            app:destination="@id/change_password_fragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/profile_edit_fragment"
+        android:name="com.example.pawcare.ui.profile.ProfileEditFragment"
+        android:label="@string/label_profile_edit"
+        tools:layout="@layout/fragment_edit_profile">
+
+        <action
+            android:id="@+id/actionAddPhoto"
+            app:destination="@id/dialog_add_photo" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/history_consultation_fragment"
+        android:name="com.example.pawcare.ui.profile.history.HistoryConsultationFragment"
+        android:label="@string/label_history_consultation"
+        tools:layout="@layout/fragment_history_consultation">
+
+        <action
+            android:id="@+id/actionHistoryConsultationDetail"
+            app:destination="@id/history_consultation_detail_fragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/history_consultation_detail_fragment"
+        android:name="com.example.pawcare.ui.profile.history.HistoryConsultationDetailFragment"
+        android:label="@string/label_history_consultation_detail"
+        tools:layout="@layout/fragment_history_consultation_detail">
+
+        <argument
+            android:name="id"
+            app:argType="integer" />
+
+        <action
+            android:id="@+id/actionPaymentSummary"
+            app:destination="@id/payment_summary_fragment" />
+
+        <action
+            android:id="@+id/actionWriteReview"
+            app:destination="@id/write_review_fragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/payment_summary_fragment"
+        android:name="com.example.pawcare.ui.profile.payment.PaymentSummaryFragment"
+        android:label="@string/label_payment"
+        tools:layout="@layout/fragment_payment_summary">
+
+        <argument
+            android:name="consultationId"
+            android:defaultValue="0"
+            app:argType="integer" />
+
+        <argument
+            android:name="consultationPrice"
+            android:defaultValue="0"
+            app:argType="integer" />
+
+        <argument
+            android:name="paymentDue"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+
+        <action
+            android:id="@+id/actionPayment"
+            app:destination="@id/payment_fragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/payment_fragment"
+        android:name="com.example.pawcare.ui.profile.payment.PaymentFragment"
+        android:label="@string/label_upload_payment"
+        tools:layout="@layout/fragment_payment">
+
+        <argument
+            android:name="consultationId"
+            android:defaultValue="0"
+            app:argType="integer" />
+
+        <action
+            android:id="@+id/actionAddPhoto"
+            app:destination="@id/dialog_add_photo" />
+
+    </fragment>
+
+    <dialog
+        android:id="@+id/dialog_add_photo"
+        android:name="com.example.pawcare.ui.profile.bottomsheet.ImageSelectionBottomSheet"
+        tools:layout="@layout/dialog_add_photo">
+
+        <argument
+            android:name="title"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+
+        <argument
+            android:name="type"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+
+    </dialog>
+
+    <fragment
+        android:id="@+id/write_review_fragment"
+        android:name="com.example.pawcare.ui.profile.review.WriteReviewFragment"
+        android:label="@string/label_write_review"
+        tools:layout="@layout/fragment_write_review">
+
+        <argument
+            android:name="consultationId"
+            android:defaultValue="0"
+            app:argType="integer" />
+
+        <argument
+            android:name="vetName"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+
+        <argument
+            android:name="doctorName"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+
+        <argument
+            android:name="price"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+
+        <argument
+            android:name="discountedPrice"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+
+        <argument
+            android:name="date"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/change_password_fragment"
+        android:name="com.example.pawcare.ui.profile.ProfileChangePasswordFragment"
+        android:label="@string/label_change_password"
+        tools:layout="@layout/fragment_change_password" />
+
+</navigation>

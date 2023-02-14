@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivBanner"
+        android:layout_width="@dimen/zero_margin"
+        android:layout_height="@dimen/zero_margin"
+        app:layout_constraintDimensionRatio="16:9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="@dimen/zero_margin"
+        android:layout_height="@dimen/zero_margin"
+        android:background="@color/black_70"
+        app:layout_constraintBottom_toBottomOf="@id/ivBanner"
+        app:layout_constraintEnd_toEndOf="@id/ivBanner"
+        app:layout_constraintStart_toStartOf="@id/ivBanner"
+        app:layout_constraintTop_toTopOf="@id/ivBanner" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivProfile"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/zero_margin"
+        android:layout_marginTop="@dimen/large_margin"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/ivBanner"
+        app:layout_constraintStart_toStartOf="@id/ivBanner"
+        app:layout_constraintTop_toTopOf="@id/ivBanner" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginTop="@dimen/screen_margin"
+        android:layout_marginEnd="@dimen/screen_margin"
+        android:drawableEnd="@drawable/ic_girl"
+        android:drawablePadding="@dimen/normal_margin"
+        android:textAppearance="@style/TextAppearance.Roboto.Medium.Body1"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivProfile" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvHistory"
+        android:layout_width="@dimen/zero_margin"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginTop="@dimen/screen_margin"
+        android:layout_marginEnd="@dimen/screen_margin"
+        android:drawableStart="@drawable/ic_history"
+        android:drawableEnd="@drawable/ic_chevron_right"
+        android:drawablePadding="@dimen/normal_margin"
+        android:text="@string/history_consultation"
+        android:textAppearance="@style/TextAppearance.Roboto.Medium.Caption"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivBanner" />
+
+    <View
+        android:id="@+id/vHistory"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_height"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:background="@color/alto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvHistory" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clWaitingPayment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/screen_margin"
+        android:layout_marginEnd="@dimen/extra_huge_margin"
+        app:layout_constraintEnd_toStartOf="@id/clInSession"
+        app:layout_constraintTop_toBottomOf="@id/vHistory">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivWaitingPayment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_payment" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvWaitingPayment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_margin"
+            android:text="@string/history_waiting_payment"
+            android:textAppearance="@style/TextAppearance.Roboto.Medium.Caption"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivWaitingPayment" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clInSession"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginTop="@dimen/screen_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vHistory">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivInSession"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_in_session" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvInSession"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_margin"
+            android:text="@string/history_in_session"
+            android:textAppearance="@style/TextAppearance.Roboto.Medium.Caption"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivInSession" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clReview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/extra_huge_margin"
+        android:layout_marginTop="@dimen/screen_margin"
+        app:layout_constraintStart_toEndOf="@id/clInSession"
+        app:layout_constraintTop_toBottomOf="@id/vHistory">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivReview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_review" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvReview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_margin"
+            android:text="@string/history_give_rating"
+            android:textAppearance="@style/TextAppearance.Roboto.Medium.Caption"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivReview" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/vHistoryBottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_height"
+        android:layout_marginTop="@dimen/screen_margin"
+        android:background="@color/alto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clInSession" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvEditProfile"
+        android:layout_width="@dimen/zero_margin"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/screen_margin"
+        android:drawableStart="@drawable/ic_edit"
+        android:drawableEnd="@drawable/ic_chevron_right"
+        android:drawablePadding="@dimen/normal_margin"
+        android:text="@string/edit_profile"
+        android:textAppearance="@style/TextAppearance.Roboto.Medium.Caption"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vHistoryBottom" />
+
+    <View
+        android:id="@+id/vEditProfile"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_height"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:background="@color/alto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvEditProfile" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvChangePassword"
+        android:layout_width="@dimen/zero_margin"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginTop="@dimen/screen_margin"
+        android:layout_marginEnd="@dimen/screen_margin"
+        android:drawableStart="@drawable/ic_change_password"
+        android:drawableEnd="@drawable/ic_chevron_right"
+        android:drawablePadding="@dimen/normal_margin"
+        android:text="@string/change_password"
+        android:textAppearance="@style/TextAppearance.Roboto.Medium.Caption"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vEditProfile" />
+
+    <View
+        android:id="@+id/vChangePassword"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_height"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:background="@color/alto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvChangePassword" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvLogOut"
+        android:layout_width="@dimen/zero_margin"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginTop="@dimen/screen_margin"
+        android:layout_marginEnd="@dimen/screen_margin"
+        android:drawableStart="@drawable/ic_log_out"
+        android:drawableEnd="@drawable/ic_chevron_right"
+        android:drawablePadding="@dimen/normal_margin"
+        android:text="@string/log_out"
+        android:textAppearance="@style/TextAppearance.Roboto.Medium.Caption"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vChangePassword" />
+
+    <View
+        android:id="@+id/vLogOut"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_height"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:background="@color/alto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvLogOut" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

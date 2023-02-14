@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/consultation"
+    app:startDestination="@id/consultation_fragment">
+
+    <fragment
+        android:id="@+id/consultation_fragment"
+        android:name="com.example.pawcare.ui.consultation.ConsultationFragment"
+        tools:layout="@layout/fragment_consultation">
+
+        <action
+            android:id="@+id/actionConsultationDetail"
+            app:destination="@id/consultation_detail_fragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/consultation_detail_fragment"
+        android:name="com.example.pawcare.ui.consultation.ConsultationDetailFragment"
+        android:label="@string/label_clinic_detail"
+        tools:layout="@layout/fragment_consultation_detail">
+
+        <argument
+            android:name="id"
+            app:argType="integer" />
+
+        <action
+            android:id="@+id/actionPaymentSummary"
+            app:destination="@id/payment_summary_fragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/payment_summary_fragment"
+        android:name="com.example.pawcare.ui.consultation.PaymentSummaryFragment"
+        android:label="@string/label_payment"
+        tools:layout="@layout/fragment_payment_summary">
+
+        <argument
+            android:name="consultationId"
+            android:defaultValue="0"
+            app:argType="integer" />
+
+        <argument
+            android:name="consultationPrice"
+            android:defaultValue="0"
+            app:argType="integer" />
+
+        <argument
+            android:name="paymentDue"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+
+        <action
+            android:id="@+id/actionPayment"
+            app:destination="@id/payment_fragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/payment_fragment"
+        android:name="com.example.pawcare.ui.consultation.PaymentFragment"
+        android:label="@string/label_upload_payment"
+        tools:layout="@layout/fragment_payment">
+
+        <argument
+            android:name="consultationId"
+            android:defaultValue="0"
+            app:argType="integer" />
+
+        <action
+            android:id="@+id/actionAddPhoto"
+            app:destination="@id/dialog_add_photo" />
+
+    </fragment>
+
+    <dialog
+        android:id="@+id/dialog_add_photo"
+        android:name="com.example.pawcare.ui.consultation.bottomsheet.ImageSelectionBottomSheet"
+        tools:layout="@layout/dialog_add_photo">
+
+        <argument
+            android:name="title"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+
+    </dialog>
+
+</navigation>

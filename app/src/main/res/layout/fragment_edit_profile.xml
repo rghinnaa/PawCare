@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivBanner"
+                android:layout_width="@dimen/zero_margin"
+                android:layout_height="@dimen/zero_margin"
+                app:layout_constraintDimensionRatio="16:9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/icBanner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/ivBanner"
+                app:layout_constraintEnd_toEndOf="@id/ivBanner"
+                app:layout_constraintStart_toStartOf="@id/ivBanner"
+                app:layout_constraintTop_toTopOf="@id/ivBanner"
+                app:srcCompat="@drawable/ic_add_photo" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivProfile"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/zero_margin"
+                app:layout_constraintBottom_toBottomOf="@id/ivBanner"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/ivBanner"
+                app:layout_constraintTop_toBottomOf="@id/ivBanner" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/icProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/ivProfile"
+                app:layout_constraintEnd_toEndOf="@id/ivProfile"
+                app:layout_constraintStart_toStartOf="@id/ivProfile"
+                app:layout_constraintTop_toTopOf="@id/ivProfile"
+                app:srcCompat="@drawable/ic_add_photo" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvName"
+                android:layout_width="@dimen/zero_margin"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/screen_margin"
+                android:layout_marginTop="@dimen/large_margin"
+                android:layout_marginEnd="@dimen/screen_margin"
+                android:text="@string/field_name"
+                android:textAppearance="@style/TextAppearance.Roboto.Medium.Body2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivProfile" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/boxName"
+                style="@style/TextInputLayout.Login.Form.Outlined.Dense"
+                android:layout_width="@dimen/zero_margin"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/screen_margin"
+                android:layout_marginTop="@dimen/small_margin"
+                android:layout_marginEnd="@dimen/screen_margin"
+                android:layout_marginBottom="@dimen/screen_margin"
+                app:boxBackgroundColor="@color/white"
+                app:boxCornerRadiusBottomEnd="@dimen/_8sdp"
+                app:boxCornerRadiusBottomStart="@dimen/_8sdp"
+                app:boxCornerRadiusTopEnd="@dimen/_8sdp"
+                app:boxCornerRadiusTopStart="@dimen/_8sdp"
+                app:boxStrokeColor="@drawable/bg_text_input_layout"
+                app:boxStrokeWidth="@dimen/_1sdp"
+                app:boxStrokeWidthFocused="1dp"
+                app:endIconTint="@color/alto"
+                app:expandedHintEnabled="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvName"
+                app:placeholderText="@string/field_input_name"
+                app:placeholderTextAppearance="@style/TextAppearance.Roboto.Regular.Body2"
+                app:placeholderTextColor="@color/alto">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:maxLength="255"
+                    android:maxLines="1"
+                    android:textAppearance="@style/TextAppearance.Roboto.Regular.Caption" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvEmail"
+                android:layout_width="@dimen/zero_margin"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/screen_margin"
+                android:layout_marginTop="@dimen/screen_margin"
+                android:layout_marginEnd="@dimen/screen_margin"
+                android:text="@string/field_email"
+                android:textAppearance="@style/TextAppearance.Roboto.Medium.Body2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/boxName" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/boxEmail"
+                style="@style/TextInputLayout.Login.Form.Outlined.Dense"
+                android:layout_width="@dimen/zero_margin"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/screen_margin"
+                android:layout_marginTop="@dimen/small_margin"
+                android:layout_marginEnd="@dimen/screen_margin"
+                android:layout_marginBottom="@dimen/screen_margin"
+                app:boxBackgroundColor="@color/white"
+                app:boxCornerRadiusBottomEnd="@dimen/_8sdp"
+                app:boxCornerRadiusBottomStart="@dimen/_8sdp"
+                app:boxCornerRadiusTopEnd="@dimen/_8sdp"
+                app:boxCornerRadiusTopStart="@dimen/_8sdp"
+                app:boxStrokeColor="@drawable/bg_text_input_layout"
+                app:boxStrokeWidth="@dimen/_1sdp"
+                app:boxStrokeWidthFocused="1dp"
+                app:endIconTint="@color/alto"
+                app:expandedHintEnabled="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvEmail"
+                app:placeholderText="@string/field_input_email"
+                app:placeholderTextAppearance="@style/TextAppearance.Roboto.Regular.Body2"
+                app:placeholderTextColor="@color/alto">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="255"
+                    android:maxLines="1"
+                    android:textAppearance="@style/TextAppearance.Roboto.Regular.Caption" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvPhone"
+                android:layout_width="@dimen/zero_margin"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/screen_margin"
+                android:layout_marginTop="@dimen/screen_margin"
+                android:layout_marginEnd="@dimen/screen_margin"
+                android:text="@string/field_phone"
+                android:textAppearance="@style/TextAppearance.Roboto.Medium.Body2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/boxEmail" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/boxPhone"
+                style="@style/TextInputLayout.Login.Form.Outlined.Dense"
+                android:layout_width="@dimen/zero_margin"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/screen_margin"
+                android:layout_marginTop="@dimen/small_margin"
+                android:layout_marginEnd="@dimen/screen_margin"
+                android:layout_marginBottom="@dimen/screen_margin"
+                app:boxBackgroundColor="@color/white"
+                app:boxCornerRadiusBottomEnd="@dimen/_8sdp"
+                app:boxCornerRadiusBottomStart="@dimen/_8sdp"
+                app:boxCornerRadiusTopEnd="@dimen/_8sdp"
+                app:boxCornerRadiusTopStart="@dimen/_8sdp"
+                app:boxStrokeColor="@drawable/bg_text_input_layout"
+                app:boxStrokeWidth="@dimen/_1sdp"
+                app:boxStrokeWidthFocused="1dp"
+                app:endIconTint="@color/alto"
+                app:expandedHintEnabled="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvPhone"
+                app:placeholderTextColor="@color/alto"
+                app:prefixText="+62"
+                app:prefixTextAppearance="@style/TextAppearance.Roboto.Regular.Body2"
+                app:prefixTextColor="@color/alto">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="phone"
+                    android:maxLength="11"
+                    android:maxLines="1"
+                    android:textAppearance="@style/TextAppearance.Roboto.Regular.Caption" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvAddress"
+                android:layout_width="@dimen/zero_margin"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/screen_margin"
+                android:layout_marginTop="@dimen/screen_margin"
+                android:layout_marginEnd="@dimen/screen_margin"
+                android:text="@string/field_address"
+                android:textAppearance="@style/TextAppearance.Roboto.Medium.Body2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/boxPhone" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/boxAddress"
+                style="@style/TextInputLayout.Login.Form.Outlined.Dense"
+                android:layout_width="@dimen/zero_margin"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/screen_margin"
+                android:layout_marginTop="@dimen/small_margin"
+                android:layout_marginEnd="@dimen/screen_margin"
+                android:layout_marginBottom="@dimen/screen_margin"
+                app:boxBackgroundColor="@color/white"
+                app:boxCornerRadiusBottomEnd="@dimen/_8sdp"
+                app:boxCornerRadiusBottomStart="@dimen/_8sdp"
+                app:boxCornerRadiusTopEnd="@dimen/_8sdp"
+                app:boxCornerRadiusTopStart="@dimen/_8sdp"
+                app:boxStrokeColor="@drawable/bg_text_input_layout"
+                app:boxStrokeWidth="@dimen/_1sdp"
+                app:boxStrokeWidthFocused="1dp"
+                app:endIconTint="@color/alto"
+                app:expandedHintEnabled="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvAddress"
+                app:placeholderText="@string/field_input_address"
+                app:placeholderTextAppearance="@style/TextAppearance.Roboto.Regular.Body2"
+                app:placeholderTextColor="@color/alto">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="textMultiLine"
+                    android:maxLength="500"
+                    android:minLines="1"
+                    android:textAppearance="@style/TextAppearance.Roboto.Regular.Caption" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSubmit"
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                android:layout_width="@dimen/zero_margin"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/screen_margin"
+                android:layout_marginTop="@dimen/large_margin"
+                android:layout_marginEnd="@dimen/screen_margin"
+                android:layout_marginBottom="@dimen/screen_margin"
+                android:backgroundTint="@color/mona_lisa"
+                android:insetTop="@dimen/zero_margin"
+                android:insetBottom="@dimen/zero_margin"
+                android:padding="@dimen/medium_margin"
+                android:text="@string/submit"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.Roboto.Bold.Caption"
+                android:textColor="@color/white"
+                app:cornerRadius="@dimen/_4sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/boxAddress" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clLoading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="@color/black_70">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

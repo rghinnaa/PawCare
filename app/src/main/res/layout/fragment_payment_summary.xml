@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivCountdown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/large_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_countdown_timer" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvHour"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/zero_margin"
+        android:layout_marginTop="@dimen/screen_margin"
+        android:layout_marginEnd="@dimen/normal_margin"
+        app:cardBackgroundColor="@color/mona_lisa"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@id/ivBulletHour"
+        app:layout_constraintTop_toBottomOf="@id/ivCountdown">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvHour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/normal_margin"
+            android:textAppearance="@style/TextAppearance.Roboto.Bold.Subtitle1"
+            android:textColor="@color/white"
+            android:text="00" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivBulletHour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/normal_margin"
+        app:layout_constraintBottom_toBottomOf="@id/cvMinute"
+        app:layout_constraintEnd_toStartOf="@id/cvMinute"
+        app:layout_constraintTop_toTopOf="@id/cvMinute"
+        app:srcCompat="@drawable/ic_two_bullet" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvMinute"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/zero_margin"
+        android:layout_marginTop="@dimen/screen_margin"
+        app:cardBackgroundColor="@color/mona_lisa"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivCountdown">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvMinute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/normal_margin"
+            android:textAppearance="@style/TextAppearance.Roboto.Bold.Subtitle1"
+            android:textColor="@color/white"
+            android:text="00" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivBulletMinute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/normal_margin"
+        app:layout_constraintBottom_toBottomOf="@id/cvMinute"
+        app:layout_constraintStart_toEndOf="@id/cvMinute"
+        app:layout_constraintTop_toTopOf="@id/cvMinute"
+        app:srcCompat="@drawable/ic_two_bullet" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvSecond"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/zero_margin"
+        android:layout_marginStart="@dimen/normal_margin"
+        android:layout_marginTop="@dimen/screen_margin"
+        app:cardBackgroundColor="@color/mona_lisa"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toEndOf="@id/ivBulletMinute"
+        app:layout_constraintTop_toBottomOf="@id/ivCountdown">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvSecond"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/normal_margin"
+            android:textAppearance="@style/TextAppearance.Roboto.Bold.Subtitle1"
+            android:textColor="@color/white"
+            android:text="00" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <View
+        android:id="@+id/vCountdown"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_height"
+        android:layout_marginTop="@dimen/screen_margin"
+        android:background="@color/alto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cvMinute" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvSummaryDesc"
+        android:layout_width="@dimen/zero_margin"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/large_margin"
+        android:layout_marginTop="@dimen/screen_margin"
+        android:layout_marginEnd="@dimen/large_margin"
+        android:gravity="center"
+        android:text="@string/summary_desc"
+        android:textAppearance="@style/TextAppearance.Roboto.Regular.Caption"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vCountdown" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvBank"
+        android:layout_width="@dimen/zero_margin"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginTop="@dimen/screen_margin"
+        android:layout_marginEnd="@dimen/normal_margin"
+        android:text="@string/bca"
+        android:textAppearance="@style/TextAppearance.Roboto.Medium.Body2"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toStartOf="@id/tvBankNumber"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSummaryDesc" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvBankName"
+        android:layout_width="@dimen/zero_margin"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginTop="@dimen/small_margin"
+        android:layout_marginEnd="@dimen/normal_margin"
+        android:text="@string/pawcare_name"
+        android:textAppearance="@style/TextAppearance.Roboto.Medium.Body2"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toStartOf="@id/tvBankNumber"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvBank" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvBankNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/medium_margin"
+        android:textAppearance="@style/TextAppearance.Roboto.Medium.Body2"
+        android:textColor="@color/mona_lisa"
+        app:layout_constraintBottom_toBottomOf="@id/btnCopyNumber"
+        app:layout_constraintEnd_toStartOf="@id/btnCopyNumber"
+        app:layout_constraintTop_toTopOf="@id/btnCopyNumber" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCopyNumber"
+        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+        android:layout_width="@dimen/_56sdp"
+        android:layout_height="@dimen/_28sdp"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginEnd="@dimen/screen_margin"
+        android:backgroundTint="@color/white"
+        android:insetTop="@dimen/zero_margin"
+        android:insetBottom="@dimen/zero_margin"
+        android:text="@string/copy"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.Roboto.Regular.Caption"
+        android:textColor="@color/mona_lisa"
+        app:cornerRadius="@dimen/_4sdp"
+        app:layout_constraintBottom_toBottomOf="@id/tvBankName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvBank"
+        app:rippleColor="@color/mercury"
+        app:strokeColor="@color/mona_lisa"
+        app:strokeWidth="@dimen/view_height" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvTotalPayment"
+        android:layout_width="@dimen/zero_margin"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginEnd="@dimen/normal_margin"
+        android:text="@string/total_payment"
+        android:textAppearance="@style/TextAppearance.Roboto.Medium.Body2"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@id/btnCopyTotal"
+        app:layout_constraintEnd_toStartOf="@id/tvTotal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btnCopyTotal" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCopyTotal"
+        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+        android:layout_width="@dimen/_56sdp"
+        android:layout_height="@dimen/_28sdp"
+        android:layout_marginTop="@dimen/screen_margin"
+        android:layout_marginEnd="@dimen/screen_margin"
+        android:backgroundTint="@color/white"
+        android:insetTop="@dimen/zero_margin"
+        android:insetBottom="@dimen/zero_margin"
+        android:text="@string/copy"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.Roboto.Regular.Caption"
+        android:textColor="@color/mona_lisa"
+        app:cornerRadius="@dimen/_4sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvBankName"
+        app:rippleColor="@color/mercury"
+        app:strokeColor="@color/mona_lisa"
+        app:strokeWidth="@dimen/view_height" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/medium_margin"
+        android:textAppearance="@style/TextAppearance.Roboto.Medium.Body2"
+        android:textColor="@color/mona_lisa"
+        app:layout_constraintBottom_toBottomOf="@id/btnCopyTotal"
+        app:layout_constraintEnd_toStartOf="@id/btnCopyTotal"
+        app:layout_constraintTop_toTopOf="@id/btnCopyTotal" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnUploadPayment"
+        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+        android:layout_width="@dimen/zero_margin"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginTop="@dimen/large_margin"
+        android:layout_marginEnd="@dimen/screen_margin"
+        android:backgroundTint="@color/mona_lisa"
+        android:insetTop="@dimen/zero_margin"
+        android:insetBottom="@dimen/zero_margin"
+        android:padding="@dimen/medium_margin"
+        android:text="@string/upload_payment"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.Roboto.Bold.Caption"
+        android:textColor="@color/white"
+        app:cornerRadius="@dimen/_4sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnCopyTotal" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/vStatus"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/zero_margin"
+        android:background="@color/mona_lisa"
+        app:layout_constraintBottom_toTopOf="@id/vVetCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvStatus"
+        android:layout_width="@dimen/zero_margin"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginTop="@dimen/screen_margin"
+        android:layout_marginEnd="@dimen/screen_margin"
+        android:textAppearance="@style/TextAppearance.Roboto.Bold.Body2"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvStatusDesc"
+        android:layout_width="@dimen/zero_margin"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginTop="@dimen/small_margin"
+        android:layout_marginEnd="@dimen/screen_margin"
+        android:textAppearance="@style/TextAppearance.Roboto.Regular.Caption"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvStatus" />
+
+    <View
+        android:id="@+id/vVetCenter"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/view_height"
+        app:layout_constraintBottom_toBottomOf="@id/cvVet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/cvVet" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvVet"
+        android:layout_width="@dimen/zero_margin"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginTop="@dimen/screen_margin"
+        android:layout_marginEnd="@dimen/screen_margin"
+        app:cardElevation="@dimen/small_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvStatusDesc">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivVet"
+                android:layout_width="@dimen/zero_margin"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_marginStart="@dimen/screen_margin"
+                android:layout_marginTop="@dimen/screen_margin"
+                android:layout_marginBottom="@dimen/screen_margin"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="@dimen/zero_margin"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/screen_margin"
+                android:layout_marginEnd="@dimen/screen_margin"
+                app:layout_constraintBottom_toBottomOf="@id/ivVet"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ivVet"
+                app:layout_constraintTop_toTopOf="@id/ivVet">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvVetName"
+                    android:layout_width="@dimen/zero_margin"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.Roboto.Medium.Body2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvDoctorName"
+                    android:layout_width="@dimen/zero_margin"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/extra_small_margin"
+                    android:textAppearance="@style/TextAppearance.Roboto.Regular.Caption"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvVetName" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvDetailConsultation"
+        android:layout_width="@dimen/zero_margin"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginTop="@dimen/screen_margin"
+        android:layout_marginEnd="@dimen/screen_margin"
+        android:text="@string/history_detail_consultation"
+        android:textAppearance="@style/TextAppearance.Roboto.Bold.Body2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cvVet" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvDateConsultationTitle"
+        android:layout_width="@dimen/zero_margin"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginTop="@dimen/screen_margin"
+        android:layout_marginEnd="@dimen/screen_margin"
+        android:text="@string/history_date_consultation"
+        android:textAppearance="@style/TextAppearance.Roboto.Regular.Caption"
+        android:textColor="@color/silver"
+        app:layout_constraintEnd_toStartOf="@id/tvDateConsultation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDetailConsultation" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvDateConsultation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginTop="@dimen/screen_margin"
+        android:layout_marginEnd="@dimen/screen_margin"
+        android:text="@string/history_date_consultation"
+        android:textAppearance="@style/TextAppearance.Roboto.Regular.Caption"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDetailConsultation" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvDatePaymentTitle"
+        android:layout_width="@dimen/zero_margin"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/screen_margin"
+        android:text="@string/history_date_payment"
+        android:textAppearance="@style/TextAppearance.Roboto.Regular.Caption"
+        android:textColor="@color/silver"
+        app:layout_constraintEnd_toStartOf="@id/tvDatePayment"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDateConsultation" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvDatePayment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/screen_margin"
+        android:text="@string/history_date_payment"
+        android:textAppearance="@style/TextAppearance.Roboto.Regular.Caption"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDateConsultation" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvDatePaymentConfirmTitle"
+        android:layout_width="@dimen/zero_margin"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/screen_margin"
+        android:text="@string/history_date_payment_confirm"
+        android:textAppearance="@style/TextAppearance.Roboto.Regular.Caption"
+        android:textColor="@color/silver"
+        app:layout_constraintEnd_toStartOf="@id/tvDatePaymentConfirm"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDatePayment" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvDatePaymentConfirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/screen_margin"
+        android:text="@string/history_date_payment_confirm"
+        android:textAppearance="@style/TextAppearance.Roboto.Regular.Caption"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDatePayment" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvDatePaymentDenyTitle"
+        android:layout_width="@dimen/zero_margin"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/screen_margin"
+        android:text="@string/history_date_payment_deny"
+        android:textAppearance="@style/TextAppearance.Roboto.Regular.Caption"
+        android:textColor="@color/silver"
+        app:layout_constraintEnd_toStartOf="@id/tvDatePaymentDeny"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDatePaymentConfirm" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvDatePaymentDeny"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/screen_margin"
+        android:text="@string/history_date_payment_deny"
+        android:textAppearance="@style/TextAppearance.Roboto.Regular.Caption"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDatePaymentConfirm" />
+
+    <View
+        android:id="@+id/vConsultation"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_height"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:background="@color/alto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDatePaymentDeny" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvPriceTitle"
+        android:layout_width="@dimen/zero_margin"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/screen_margin"
+        android:text="@string/history_price"
+        android:textAppearance="@style/TextAppearance.Roboto.Regular.Caption"
+        android:textColor="@color/silver"
+        app:layout_constraintEnd_toStartOf="@id/tvPrice"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vConsultation" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/screen_margin"
+        android:text="@string/history_price"
+        android:textAppearance="@style/TextAppearance.Roboto.Regular.Caption"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vConsultation" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvDiscountTitle"
+        android:layout_width="@dimen/zero_margin"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/screen_margin"
+        android:text="@string/history_discount"
+        android:textAppearance="@style/TextAppearance.Roboto.Regular.Caption"
+        android:textColor="@color/silver"
+        app:layout_constraintEnd_toStartOf="@id/tvDiscount"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvPrice" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvDiscount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/screen_margin"
+        android:text="@string/history_discount"
+        android:textAppearance="@style/TextAppearance.Roboto.Regular.Caption"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvPrice" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvTotalPaymentTitle"
+        android:layout_width="@dimen/zero_margin"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/screen_margin"
+        android:text="@string/total_payment"
+        android:textAppearance="@style/TextAppearance.Roboto.Medium.Caption"
+        android:textColor="@color/silver"
+        app:layout_constraintEnd_toStartOf="@id/tvTotalPayment"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDiscount" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvTotalPayment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/screen_margin"
+        android:text="@string/total_payment"
+        android:textAppearance="@style/TextAppearance.Roboto.Medium.Caption"
+        android:textColor="@color/mona_lisa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDiscount" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="@dimen/screen_margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnConsultation"
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                android:layout_width="@dimen/zero_margin"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/screen_margin"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:layout_marginEnd="@dimen/screen_margin"
+                android:layout_marginBottom="@dimen/medium_margin"
+                android:backgroundTint="@color/mona_lisa"
+                android:insetTop="@dimen/zero_margin"
+                android:insetBottom="@dimen/zero_margin"
+                android:padding="@dimen/medium_margin"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.Roboto.Bold.Caption"
+                android:textColor="@color/white"
+                app:cornerRadius="@dimen/_4sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvDate"
+                android:layout_width="@dimen/zero_margin"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/screen_margin"
+                android:layout_marginEnd="@dimen/screen_margin"
+                android:textAppearance="@style/TextAppearance.Roboto.Regular.Caption"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvVetName"
+                android:layout_width="@dimen/zero_margin"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/screen_margin"
+                android:layout_marginTop="@dimen/screen_margin"
+                android:layout_marginEnd="@dimen/screen_margin"
+                android:textAppearance="@style/TextAppearance.Roboto.Medium.Body2"
+                app:layout_constraintEnd_toStartOf="@id/tvDate"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvDoctorName"
+                android:layout_width="@dimen/zero_margin"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/screen_margin"
+                android:layout_marginTop="@dimen/small_margin"
+                android:layout_marginEnd="@dimen/screen_margin"
+                android:textAppearance="@style/TextAppearance.Roboto.Regular.Caption"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvVetName" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvDiscountedPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/screen_margin"
+                android:layout_marginTop="@dimen/normal_margin"
+                android:textAppearance="@style/TextAppearance.Roboto.Medium.Body2"
+                android:textColor="@color/mona_lisa"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvDoctorName" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/normal_margin"
+                android:textAppearance="@style/TextAppearance.Roboto.Regular.Caption"
+                android:textColor="@color/alto"
+                app:layout_constraintBottom_toBottomOf="@id/tvDiscountedPrice"
+                app:layout_constraintStart_toEndOf="@id/tvDiscountedPrice"
+                app:layout_constraintTop_toTopOf="@id/tvDiscountedPrice" />
+
+            <View
+                android:id="@+id/vTitle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/view_height"
+                android:layout_marginTop="@dimen/screen_margin"
+                android:background="@color/alto"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvDiscountedPrice" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvReviewTitle"
+                android:layout_width="@dimen/zero_margin"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/screen_margin"
+                android:layout_marginTop="@dimen/screen_margin"
+                android:layout_marginEnd="@dimen/screen_margin"
+                android:gravity="center"
+                android:text="@string/give_rating"
+                android:textAppearance="@style/TextAppearance.Roboto.Medium.Body2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vTitle" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivStar1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/screen_margin"
+                android:layout_marginEnd="@dimen/large_margin"
+                android:tint="@color/turbo"
+                app:layout_constraintEnd_toStartOf="@id/ivStar2"
+                app:layout_constraintTop_toBottomOf="@id/tvReviewTitle"
+                app:srcCompat="@drawable/ic_review" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivStar2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/screen_margin"
+                android:layout_marginEnd="@dimen/large_margin"
+                android:tint="@color/turbo"
+                app:layout_constraintEnd_toStartOf="@id/ivStar3"
+                app:layout_constraintTop_toBottomOf="@id/tvReviewTitle"
+                app:srcCompat="@drawable/ic_review" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivStar3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/screen_margin"
+                android:tint="@color/turbo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvReviewTitle"
+                app:srcCompat="@drawable/ic_review" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivStar4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/large_margin"
+                android:layout_marginTop="@dimen/screen_margin"
+                android:tint="@color/turbo"
+                app:layout_constraintStart_toEndOf="@id/ivStar3"
+                app:layout_constraintTop_toBottomOf="@id/tvReviewTitle"
+                app:srcCompat="@drawable/ic_review" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivStar5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/large_margin"
+                android:layout_marginTop="@dimen/screen_margin"
+                android:tint="@color/turbo"
+                app:layout_constraintStart_toEndOf="@id/ivStar4"
+                app:layout_constraintTop_toBottomOf="@id/tvReviewTitle"
+                app:srcCompat="@drawable/ic_review" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvReview"
+                android:layout_width="@dimen/zero_margin"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/screen_margin"
+                android:layout_marginTop="@dimen/large_margin"
+                android:layout_marginEnd="@dimen/screen_margin"
+                android:text="@string/field_review_description"
+                android:textAppearance="@style/TextAppearance.Roboto.Regular.Caption"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivStar3" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/boxReview"
+                style="@style/TextInputLayout.Login.Form.Outlined.Dense"
+                android:layout_width="@dimen/zero_margin"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/screen_margin"
+                android:layout_marginTop="@dimen/normal_margin"
+                android:layout_marginEnd="@dimen/screen_margin"
+                android:layout_marginBottom="@dimen/screen_margin"
+                app:boxBackgroundColor="@color/white"
+                app:boxCornerRadiusBottomEnd="@dimen/_8sdp"
+                app:boxCornerRadiusBottomStart="@dimen/_8sdp"
+                app:boxCornerRadiusTopEnd="@dimen/_8sdp"
+                app:boxCornerRadiusTopStart="@dimen/_8sdp"
+                app:boxStrokeColor="@drawable/bg_text_input_layout"
+                app:boxStrokeWidth="@dimen/_1sdp"
+                app:boxStrokeWidthFocused="1dp"
+                app:endIconTint="@color/alto"
+                app:expandedHintEnabled="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvReview"
+                app:placeholderText="@string/field_input_review_description"
+                app:placeholderTextAppearance="@style/TextAppearance.Roboto.Regular.Body2"
+                app:placeholderTextColor="@color/alto">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etReview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top|start"
+                    android:imeOptions="actionNext"
+                    android:inputType="textMultiLine"
+                    android:maxLength="500"
+                    android:lines="7"
+                    android:textAppearance="@style/TextAppearance.Roboto.Regular.Caption"
+                    android:textColor="@color/black" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvMax"
+                android:layout_width="@dimen/zero_margin"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/screen_margin"
+                android:layout_marginTop="@dimen/small_margin"
+                android:layout_marginEnd="@dimen/screen_margin"
+                android:gravity="end"
+                android:text="@string/review_desc_max"
+                android:textAppearance="@style/TextAppearance.Roboto.Regular.Caption"
+                android:textColor="@color/mona_lisa"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/boxReview" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSubmit"
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                android:layout_width="@dimen/zero_margin"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/screen_margin"
+                android:layout_marginTop="@dimen/large_margin"
+                android:layout_marginEnd="@dimen/screen_margin"
+                android:layout_marginBottom="@dimen/screen_margin"
+                android:backgroundTint="@color/mona_lisa"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:insetTop="@dimen/zero_margin"
+                android:insetBottom="@dimen/zero_margin"
+                android:padding="@dimen/medium_margin"
+                android:text="@string/submit"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.Roboto.Bold.Caption"
+                android:textColor="@color/white"
+                app:cornerRadius="@dimen/_4sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvMax" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

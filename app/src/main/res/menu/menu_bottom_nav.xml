@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/home"
+        android:contentDescription="@string/cd_home"
+        android:icon="@drawable/slr_home_navigation"
+        android:title="@string/home" />
+
+    <item
+        android:id="@+id/consultation"
+        android:contentDescription="@string/cd_consultation"
+        android:icon="@drawable/slr_consultation_navigation"
+        android:title="@string/consultation" />
+
+    <item
+        android:id="@+id/notification"
+        android:contentDescription="@string/cd_notification"
+        android:icon="@drawable/slr_notification_navigation"
+        android:title="@string/notification" />
+
+    <item
+        android:id="@+id/profile"
+        android:contentDescription="@string/cd_profile"
+        android:icon="@drawable/slr_profile_navigation"
+        android:title="@string/profile" />
+</menu>
