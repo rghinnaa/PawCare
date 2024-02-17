@@ -9,7 +9,7 @@ data class HistoryResponse(
 ) {
     data class Consultations(
         @SerializedName("id")
-        var id: Int? = null,
+        var id: String? = null,
         @SerializedName("doctor")
         var doctor: String? = null,
         @SerializedName("vet_name")

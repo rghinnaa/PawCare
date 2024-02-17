@@ -1,6 +1,7 @@
 package com.example.pawcare.ui.consultation
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
@@ -26,7 +27,7 @@ class ConsultationDetailFragment : Fragment(R.layout.fragment_consultation_detai
     private val args by navArgs<ConsultationDetailFragmentArgs>()
 
     private var reviewAdapter = ReviewAdapter()
-    private var doctorId = emptyInt
+    private var doctorId = emptyString
 
     private var mFirebaseAnalytics: FirebaseAnalytics? = null
 
@@ -97,7 +98,7 @@ class ConsultationDetailFragment : Fragment(R.layout.fragment_consultation_detai
                     result.results?.consultation?.firstOrNull()?.apply {
                         navController.navigateOrNull(
                             ConsultationDetailFragmentDirections.actionPaymentSummary(
-                                consultationId = id.orEmpty,
+                                consultationId = id?.id.orEmpty,
                                 consultationPrice = price.orEmpty,
                                 paymentDue = maxPaymentTime
                             )
@@ -137,7 +138,7 @@ class ConsultationDetailFragment : Fragment(R.layout.fragment_consultation_detai
                 } else {
                     tvPrice.isVisible = false
                 }
-                tvDiscountedPrice.textOrNull = it.discountedPrice.asIDCurrency()
+                tvDiscountedPrice.textOrNull = it.discountedPrice?.toInt().asIDCurrency()
             }
 
             viewModel.requestReview(doctorId)

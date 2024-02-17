@@ -31,7 +31,7 @@ class HistoryConsultationDetailFragment : Fragment(R.layout.fragment_history_con
     private val formatter = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.US)
     private val formatDateTime = SimpleDateFormat("dd-MM-yyyy HH:mm", Locale.US)
     private val formatDate = SimpleDateFormat("dd-MM-yyyy", Locale.US)
-    private var consultationId = emptyInt
+    private var consultationId = emptyString
     private var whatsapp = emptyString
     private var vetName = emptyString
     private var doctorName = emptyString
@@ -246,7 +246,7 @@ class HistoryConsultationDetailFragment : Fragment(R.layout.fragment_history_con
 
     private fun sendWhatsApp(message: String? = null) {
         try {
-            val whatsApp = "https://api.whatsapp.com/send?phone=+62$whatsapp&text="
+            val whatsApp = "https://api.whatsapp.com/send?phone=+6285974211040&text="
             val packageManager = context?.packageManager
             val whatsappIntent = Intent(Intent.ACTION_VIEW)
             val url = whatsApp + URLEncoder.encode(

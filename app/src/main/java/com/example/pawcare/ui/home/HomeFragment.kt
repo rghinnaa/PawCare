@@ -55,7 +55,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private fun initViewModel() {
         viewModel.requestBannerList()
-        viewModel.requestDoctorList(items = "7")
+        viewModel.  requestDoctorList(items = "7")
     }
 
     private fun initViewModelCallback() {

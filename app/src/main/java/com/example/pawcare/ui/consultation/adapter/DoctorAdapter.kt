@@ -35,7 +35,7 @@ class DoctorAdapter : RecyclerView.Adapter<DoctorAdapter.DoctorViewHolder>() {
                 ivVet.loadImage(source = item.image, corner = ImageCornerOptions.ROUNDED)
                 tvVet.textOrNull = item.vetName
                 tvDoctor.textOrNull = item.name
-                tvPrice.textOrNull = item.discountedPrice?.asIDCurrency()
+                tvPrice.textOrNull = item.discountedPrice?.toInt().asIDCurrency()
                 tvRating.textOrNull = item.avgRatings
                 tvPatient.textOrNull = item.consultationCount.toString()
 

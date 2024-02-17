@@ -9,9 +9,9 @@ data class DoctorResponse(
 ) {
     data class Doctor(
         @SerializedName("id")
-        var id: Int? = null,
+        var id: String? = null,
         @SerializedName("user_doctor_detail_id")
-        var userDoctorDetailId: Int? = null,
+        var userDoctorDetailId: String? = null,
         @SerializedName("name")
         var name: String? = null,
         @SerializedName("vet_name")
@@ -22,8 +22,8 @@ data class DoctorResponse(
         var price: Int? = null,
         @SerializedName("discount")
         var discount: Int? = null,
-        @SerializedName("discountedPrice")
-        var discountedPrice: Int? = null,
+        @SerializedName("discounted_price")
+        var discountedPrice: Double? = null,
         @SerializedName("avg_ratings")
         var avgRatings: String? = null,
         @SerializedName("consultation_count")

@@ -8,8 +8,8 @@ data class ReviewResponse(
     var review: List<Review>? = null
 ) {
     data class Review(
-        @SerializedName("id")
-        var id: Int? = null,
+        @SerializedName("_id")
+        var id: String? = null,
         @SerializedName("user_name")
         var userName: String? = null,
         @SerializedName("user_image")

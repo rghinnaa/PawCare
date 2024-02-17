@@ -14,7 +14,7 @@ interface ProfileSourceCallback {
 
     fun requestHistoryList(token: String, status: String): Flow<Result<HistoryResponse>>
 
-    fun requestHistoryDetail(token: String, consultationId: Int): Flow<Result<HistoryDetailResponse>>
+    fun requestHistoryDetail(token: String, consultationId: String): Flow<Result<HistoryDetailResponse>>
 
     fun requestWriteReview(token: String, body: JsonElement): Flow<Result<Any>>
 

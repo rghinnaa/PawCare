@@ -20,7 +20,7 @@ class ProfileRepository(
 
     override fun requestHistoryDetail(
         token: String,
-        consultationId: Int
+        consultationId: String
     ) = remoteDataSource.requestHistoryDetail(token, consultationId)
 
     override fun requestWriteReview(token: String, body: JsonElement) =

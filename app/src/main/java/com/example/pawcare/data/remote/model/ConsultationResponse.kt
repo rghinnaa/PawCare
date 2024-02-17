@@ -9,7 +9,7 @@ data class ConsultationResponse(
 ) {
     data class Consultation(
         @SerializedName("id")
-        var id: Int? = null,
+        var id: Id? = null,
         @SerializedName("status")
         var status: String? = null,
         @SerializedName("consultation_date")
@@ -26,5 +26,10 @@ data class ConsultationResponse(
         var description: String? = null,
         @SerializedName("max_payment_time")
         var maxPaymentTime: String? = null,
+    )
+
+    data class Id(
+        @SerializedName("\$oid")
+        var id: String? = null,
     )
 }

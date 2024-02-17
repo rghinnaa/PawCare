@@ -1,6 +1,7 @@
 package com.example.pawcare.ui.profile.payment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -28,6 +29,7 @@ class PaymentSummaryFragment : Fragment(R.layout.fragment_payment_summary) {
 
         initView()
 
+        Log.e("tes bbbb", "${args.consultationId}")
     }
 
     private fun initView() {
@@ -130,7 +132,7 @@ class PaymentSummaryFragment : Fragment(R.layout.fragment_payment_summary) {
                 val total = args.consultationPrice
 
                 context?.clip(total.toString())
-                context?.toast(getString(R.string.success_clip, total))
+                context?.toast(getString(R.string.success_clip, total.toString()))
             }
             binding.btnUploadPayment -> {
                 navController.navigateOrNull(

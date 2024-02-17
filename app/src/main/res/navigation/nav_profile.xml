@@ -57,7 +57,7 @@
 
         <argument
             android:name="id"
-            app:argType="integer" />
+            app:argType="string" />
 
         <action
             android:id="@+id/actionPaymentSummary"
@@ -78,7 +78,7 @@
         <argument
             android:name="consultationId"
             android:defaultValue="0"
-            app:argType="integer" />
+            app:argType="string" />
 
         <argument
             android:name="consultationPrice"
@@ -105,8 +105,7 @@
 
         <argument
             android:name="consultationId"
-            android:defaultValue="0"
-            app:argType="integer" />
+            app:argType="string" />
 
         <action
             android:id="@+id/actionAddPhoto"
@@ -142,7 +141,7 @@
         <argument
             android:name="consultationId"
             android:defaultValue="0"
-            app:argType="integer" />
+            app:argType="string" />
 
         <argument
             android:name="vetName"

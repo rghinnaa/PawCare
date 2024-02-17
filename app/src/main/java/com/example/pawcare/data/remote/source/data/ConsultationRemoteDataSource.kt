@@ -19,7 +19,7 @@ class ConsultationRemoteDataSource(callback: ApiCallback) {
         apiCallback.requestDoctor(token, keyword, items)
     }
 
-    fun requestDoctorDetail(token: String, detailId: Int) = flowResponse {
+    fun requestDoctorDetail(token: String, detailId: String) = flowResponse {
         apiCallback.requestDoctorDetail(token, detailId)
     }
 
@@ -27,7 +27,7 @@ class ConsultationRemoteDataSource(callback: ApiCallback) {
         apiCallback.requestConsultation(token, body)
     }
 
-    fun requestPayment(token: String, consultationId: Int, bankName: String, senderName: String, file: File) = flowResponse {
+    fun requestPayment(token: String, consultationId: String, bankName: String, senderName: String, file: File) = flowResponse {
         val requestFile = RequestBody.create(
             "image/jpg".toMediaType(),
             file
@@ -38,7 +38,7 @@ class ConsultationRemoteDataSource(callback: ApiCallback) {
         apiCallback.requestPayment(token, consultationId, bankName, senderName, multipartImage)
     }
 
-    fun requestReviews(token: String, doctorId: Int) = flowResponse {
+    fun requestReviews(token: String, doctorId: String) = flowResponse {
         apiCallback.requestReviews(token, doctorId)
     }
 

@@ -47,8 +47,8 @@ class MainViewModel @Inject constructor(
     private var _forgotPassword: MutableLiveData<Event<Result<Any>>> = MutableLiveData()
     val forgotPassword: LiveData<Event<Result<Any>>> get() = _forgotPassword
 
-    private var _goToDetail: MutableLiveData<Int> = MutableLiveData()
-    val goToDetail: LiveData<Int> get() = _goToDetail
+    private var _goToDetail: MutableLiveData<String> = MutableLiveData()
+    val goToDetail: LiveData<String> get() = _goToDetail
 
     private var _goToHistory: MutableLiveData<Int> = MutableLiveData()
     val goToHistory: LiveData<Int> get() = _goToHistory
@@ -118,7 +118,7 @@ class MainViewModel @Inject constructor(
         _forgotPassword.value = Event(Result.nothing())
     }
 
-    fun goToDetail(doctorId: Int) {
+    fun goToDetail(doctorId: String) {
         _goToDetail.value = doctorId
     }
 

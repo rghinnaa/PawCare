@@ -95,14 +95,14 @@ class ProfileViewModel @Inject constructor(
             }
     }.launchIn(viewModelScope)
 
-    fun requestHistoryDetail(consultationId: Int) = accessToken { token ->
+    fun requestHistoryDetail(consultationId: String) = accessToken { token ->
         repository.requestHistoryDetail(token, consultationId)
             .onEach { result ->
                 _historyDetail.value = result
             }
     }.launchIn(viewModelScope)
 
-    fun requestPayment(id: Int, bankName: String, sender: String, file: File) =
+    fun requestPayment(id: String, bankName: String, sender: String, file: File) =
         accessToken { token ->
         repositoryConsultation.requestPayment(token, id, bankName, sender, file)
             .onEach { result ->
@@ -126,7 +126,7 @@ class ProfileViewModel @Inject constructor(
         _mediaPhotoBanner.value = uri
     }
 
-    fun requestWriteReview(id: Int, star: Int, review: String) {
+    fun requestWriteReview(id: String, star: Int, review: String) {
         val body = Gson().toJsonElement {
             put(CONSULTATION_ID, id)
             put(STAR, star)

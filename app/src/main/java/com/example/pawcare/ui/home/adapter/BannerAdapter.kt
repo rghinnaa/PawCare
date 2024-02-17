@@ -22,9 +22,6 @@ class BannerAdapter : RecyclerView.Adapter<BannerAdapter.BannerViewHolder>() {
     override fun onBindViewHolder(holder: BannerViewHolder, position: Int) {
         holder.bind(item = differ.currentList[position], position = position)
 
-        /*holder.setOnItemClickCallback { position, item ->
-            onItemClickListener?.invoke(item)
-        }*/
     }
 
     override fun getItemCount(): Int = differ.currentList.size
@@ -53,11 +50,5 @@ class BannerAdapter : RecyclerView.Adapter<BannerAdapter.BannerViewHolder>() {
     }
 
     val differ = AsyncListDiffer(this, differCallBack)
-
-    private var onItemClickListener: ((BannerResponse.Banner) -> Unit)? = null
-
-    fun setOnItemClickListener(listener: (BannerResponse.Banner) -> Unit) {
-        onItemClickListener = listener
-    }
 
 }

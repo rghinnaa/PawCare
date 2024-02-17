@@ -60,7 +60,7 @@ class ConsultationViewModel @Inject constructor(
                 }
         }.launchIn(viewModelScope)
 
-    fun requestDoctorDetail(detailId: Int) =
+    fun requestDoctorDetail(detailId: String) =
         accessToken { token ->
             repository.requestDoctorDetail(token, detailId)
                 .onEach { result ->
@@ -68,7 +68,7 @@ class ConsultationViewModel @Inject constructor(
                 }
         }.launchIn(viewModelScope)
 
-    fun requestConsultation(doctorId: Int) {
+    fun requestConsultation(doctorId: String) {
         val body = Gson().toJsonElement {
             put(USER_DOCTOR_DETAIL_ID, doctorId)
         }
@@ -85,7 +85,7 @@ class ConsultationViewModel @Inject constructor(
         _consultation.value = Event(Result.nothing())
     }
 
-    fun requestPayment(id: Int, bankName: String, sender: String, file: File) =
+    fun requestPayment(id: String, bankName: String, sender: String, file: File) =
         accessToken { token ->
             repository.requestPayment(token, id, bankName, sender, file)
                 .onEach { result ->
@@ -101,7 +101,7 @@ class ConsultationViewModel @Inject constructor(
         _mediaPhoto.value = uri
     }
 
-    fun requestReview(doctorId: Int) =
+    fun requestReview(doctorId: String) =
         accessToken { token ->
             repository.requestReviews(token, doctorId)
                 .onEach { result ->

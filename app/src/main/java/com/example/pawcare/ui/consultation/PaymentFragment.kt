@@ -3,6 +3,7 @@ package com.example.pawcare.ui.consultation
 import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.activity.addCallback
 import androidx.core.view.isVisible
@@ -41,6 +42,9 @@ class PaymentFragment : Fragment(R.layout.fragment_payment) {
         initOnClick()
         initFirebaseAnalytics()
         initViewModelCallback()
+
+
+        Log.e("tes abbb", "${args.consultationId}")
 
     }
 

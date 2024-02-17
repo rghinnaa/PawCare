@@ -8,8 +8,8 @@ data class UserDetailResponse(
     var userDetail: List<User>? = null
 ) {
     data class User(
-        @SerializedName("id")
-        var id: Int? = null,
+        @SerializedName("_id")
+        var id: String? = null,
         @SerializedName("name")
         var name: String? = null,
         @SerializedName("email")

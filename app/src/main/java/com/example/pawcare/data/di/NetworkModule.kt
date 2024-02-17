@@ -28,8 +28,8 @@ object NetworkModule {
     @Provides
     @Named(ACCESS_KEY)
 //    fun provideBaseURL() = "http://192.168.1.1/restoran"
-//    fun provideBaseURL() = "https://8539-2001-448a-3023-282e-df1b-268c-d034-88de.ap.ngrok.io/api/pawcare/"
-    fun provideBaseURL() = "https://pawcare.website/api/pawcare/"
+    fun provideBaseURL() = "https://88c7-180-244-135-86.ngrok-free.app/api/pawcare/"
+//    fun provideBaseURL() = "https://pawcare.website/api/pawcare/"
 
     @Provides
     @Singleton

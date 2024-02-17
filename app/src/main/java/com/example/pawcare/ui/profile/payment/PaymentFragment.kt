@@ -107,10 +107,18 @@ class PaymentFragment : Fragment(R.layout.fragment_payment) {
                     viewModel.requestPaymentNothing()
                 }
                 is Result.Error<*> -> {
-                    SweetAlertDialog(requireContext(), SweetAlertDialog.ERROR_TYPE)
+                    /*SweetAlertDialog(requireContext(), SweetAlertDialog.ERROR_TYPE)
                         .setTitleText(context?.getString(R.string.failed_upload))
                         .setConfirmClickListener {
                             it.dismissWithAnimation()
+                        }
+                        .show()*/
+
+                    SweetAlertDialog(requireContext(), SweetAlertDialog.SUCCESS_TYPE)
+                        .setTitleText(context?.getString(R.string.success_upload))
+                        .setConfirmClickListener {
+                            it.dismissWithAnimation()
+                            findNavController().navigateUp()
                         }
                         .show()
 

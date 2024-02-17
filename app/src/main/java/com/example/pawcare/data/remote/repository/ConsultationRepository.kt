@@ -18,7 +18,7 @@ class ConsultationRepository(
 
     override fun requestDoctorDetail(
         token: String,
-        detailId: Int
+        detailId: String
     ) = remoteDataSource.requestDoctorDetail(token, detailId)
 
     override fun requestConsultation(
@@ -28,12 +28,12 @@ class ConsultationRepository(
 
     override fun requestPayment(
         token: String,
-        consultationId: Int,
+        consultationId: String,
         bankName: String,
         senderName: String,
         file: File
     ) = remoteDataSource.requestPayment(token, consultationId, bankName, senderName, file)
 
-    override fun requestReviews(token: String, doctorId: Int) =
+    override fun requestReviews(token: String, doctorId: String) =
         remoteDataSource.requestReviews(token, doctorId)
 }

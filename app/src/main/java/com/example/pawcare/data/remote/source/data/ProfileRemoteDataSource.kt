@@ -16,10 +16,10 @@ class ProfileRemoteDataSource(callback: ApiCallback) {
     }
 
     fun requestHistoryList(token: String, status: String) = flowResponse {
-        apiCallback.requestHistoryList(token, status)
+        apiCallback.requestHistoryList(token)
     }
 
-    fun requestHistoryDetail(token: String, consultationId: Int) = flowResponse {
+    fun requestHistoryDetail(token: String, consultationId: String) = flowResponse {
         apiCallback.requestHistoryDetail(token, consultationId)
     }
 

@@ -40,7 +40,7 @@ interface ApiCallback {
     @GET(Const.Network.DOCTOR_DETAIL)
     suspend fun requestDoctorDetail(
         @Header("Authorization") token: String,
-        @Path("id") detailId: Int
+        @Path("id") detailId: String
     ): Response<BaseResponse<DoctorDetailResponse>>
 
     @POST(Const.Network.CONSULTATION)
@@ -53,7 +53,7 @@ interface ApiCallback {
     @POST(Const.Network.PAYMENT)
     suspend fun requestPayment(
         @Header("Authorization") token: String,
-        @Part("consultation_id") consultationId: Int,
+        @Part("consultation_id") consultationId: String,
         @Part("bank_name") bankName: String,
         @Part("sender_name") senderName: String,
         @Part file: MultipartBody.Part
@@ -62,13 +62,13 @@ interface ApiCallback {
     @GET(Const.Network.HISTORY_LIST)
     suspend fun requestHistoryList(
         @Header("Authorization") token: String,
-        @Query("search") status: String,
+//        @Query("search") status: String,
     ): Response<BaseResponse<HistoryResponse>>
 
     @GET(Const.Network.HISTORY_DETAIL)
     suspend fun requestHistoryDetail(
         @Header("Authorization") token: String,
-        @Path("consultation_id") consultationId: Int,
+        @Path("consultation_id") consultationId: String,
     ): Response<BaseResponse<HistoryDetailResponse>>
 
     @GET(Const.Network.USER_DETAIL)
@@ -111,6 +111,6 @@ interface ApiCallback {
     @GET(Const.Network.REVIEWS)
     suspend fun requestReviews(
         @Header("Authorization") token: String,
-        @Path("doctor_id") doctorId: Int
+        @Path("_id") doctorId: String
     ): Response<BaseResponse<ReviewResponse>>
 }

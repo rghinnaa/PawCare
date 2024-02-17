@@ -10,12 +10,12 @@ interface ConsultationSourceCallback {
 
     fun requestDoctor(token: String, keyword: String, items: String): Flow<Result<DoctorResponse>>
 
-    fun requestDoctorDetail(token: String, detailId: Int): Flow<Result<DoctorDetailResponse>>
+    fun requestDoctorDetail(token: String, detailId: String): Flow<Result<DoctorDetailResponse>>
 
     fun requestConsultation(token: String, body: JsonElement): Flow<Result<ConsultationResponse>>
 
-    fun requestPayment(token: String, consultationId: Int, bankName: String, senderName: String, file: File): Flow<Result<Any>>
+    fun requestPayment(token: String, consultationId: String, bankName: String, senderName: String, file: File): Flow<Result<Any>>
 
-    fun requestReviews(token: String, doctorId: Int): Flow<Result<ReviewResponse>>
+    fun requestReviews(token: String, doctorId: String): Flow<Result<ReviewResponse>>
 
 }
